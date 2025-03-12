@@ -13,9 +13,6 @@ interface DashboardContextType {
   allCaseOfStateFilters: GetAllCovidDataFilters
   handleFormSubmit: (data: { date: Date }) => void
   setAllCaseOfStateFilters: (filters: GetAllCovidDataFilters) => void
-  handleModalOpen: () => void
-  modalClose: () => void
-  modalOpen: boolean
 }
 
 interface DashboardProviderProps {
@@ -35,7 +32,6 @@ export const DashboardContext = createContext({} as DashboardContextType)
  * @returns {JSX.Element} O componente DashboardProvider que envolve os filhos e fornece o contexto.
  */
 export function DashboardProvider({ children }: DashboardProviderProps) {
-  const [modalOpen, setModalOpen] = useState(false)
   const [allCaseOfStateFilters, setAllCaseOfStateFilters] =
     useState<GetAllCovidDataFilters>({})
 
@@ -57,14 +53,6 @@ export function DashboardProvider({ children }: DashboardProviderProps) {
     })
   }
 
-  const handleModalOpen = () => {
-    setModalOpen(true)
-  }
-
-  const modalClose = () => {
-    setModalOpen(false)
-  }
-
   return (
     <DashboardContext.Provider
       value={{
@@ -73,9 +61,6 @@ export function DashboardProvider({ children }: DashboardProviderProps) {
         handleFormSubmit,
         allCaseOfStateFilters,
         setAllCaseOfStateFilters,
-        handleModalOpen,
-        modalClose,
-        modalOpen,
       }}
     >
       {children}
