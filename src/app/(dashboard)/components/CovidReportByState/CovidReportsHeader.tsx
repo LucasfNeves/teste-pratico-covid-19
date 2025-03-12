@@ -2,7 +2,6 @@
 
 import { Button } from '@/components/Button'
 import { SelectInput } from '@/components/SelectInput'
-import { useDashboardContext } from '@/hooks/useDashboardContext'
 import { PlusIcon } from 'lucide-react'
 import { stateUfs } from '@/config/constants'
 import Link from 'next/link'
@@ -27,8 +26,6 @@ export function CovidReportsHeader({
   isCovidStateReportLoading,
   handleStateChange,
 }: CovidReportsHeaderProps) {
-  const { handleModalOpen } = useDashboardContext()
-
   return (
     <header className="flex lg:justify-between gap-4 lg:flex-row flex-col w-full">
       {/* Exibe o botão de cadastro apenas em dispositivos móveis */}
@@ -61,7 +58,7 @@ export function CovidReportsHeader({
       {/* Exibe o botão de cadastro apenas em dispositivos não móveis */}
 
       <Link href="/register-new-case" className="hidden lg:flex">
-        <Button onClick={handleModalOpen} className="w-full lg:w-52">
+        <Button className="w-full lg:w-52">
           <PlusIcon className="h-4 w-4" />
           Cadastrar
         </Button>
