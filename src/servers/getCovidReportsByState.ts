@@ -10,6 +10,7 @@ export interface GetCovidReportsByStateParams {
 export async function getCovidReportsByState({
   state,
 }: GetCovidReportsByStateParams) {
+  console.log(state)
   const { data } = await httpClient.get<GetCovidReportsByStateResponse>(
     `/brazil/uf/${state}`,
   )

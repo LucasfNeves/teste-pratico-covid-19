@@ -1,16 +1,24 @@
+'use client'
+
 import { Button } from '@/components/Button'
 import { SelectInput } from '@/components/SelectInput'
 import { useDashboardContext } from '@/hooks/useDashboardContext'
 import { PlusIcon } from 'lucide-react'
-import { useCovidStateReportController } from './useCovidStateReportController'
 import { stateUfs } from '@/config/constants'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
-export function CovidReportsHeader() {
-  const { handleModalOpen } = useDashboardContext()
+interface CovidReportsHeaderProps {
+  selectedState: string
+  isCovidStateReportLoading: boolean
+  handleStateChange: (value: string) => void
+}
 
-  const { selectedState, handleStateChange, isCovidStateReportLoading } =
-    useCovidStateReportController()
+export function CovidReportsHeader({
+  selectedState,
+  isCovidStateReportLoading,
+  handleStateChange,
+}: CovidReportsHeaderProps) {
+  const { handleModalOpen } = useDashboardContext()
 
   const isMobile = useIsMobile()
 

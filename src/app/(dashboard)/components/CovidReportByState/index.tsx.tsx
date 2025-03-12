@@ -17,14 +17,22 @@ import { CovidReportsHeader } from './CovidReportsHeader'
  */
 
 export function CovidReportByStateSelector() {
-  const { covidReportsByState, isCovidStateReportLoading } =
-    useCovidStateReportController()
+  const {
+    covidReportsByState,
+    isCovidStateReportLoading,
+    handleStateChange,
+    selectedState,
+  } = useCovidStateReportController()
 
   const covidReports = covidReportsByState ?? null
 
   return (
     <div className="flex flex-col gap-4 w-full h-full">
-      <CovidReportsHeader />
+      <CovidReportsHeader
+        handleStateChange={handleStateChange}
+        isCovidStateReportLoading={isCovidStateReportLoading}
+        selectedState={selectedState}
+      />
 
       <section aria-labelledby="covid-report-section" className="flex gap-4">
         <div className="flex items-start justify-center w-full gap-4 flex-col lg:flex-row">
