@@ -9,6 +9,8 @@ COVIDREPORTS é um painel interativo que permite visualizar e filtrar dados sobr
 - **Tailwind CSS**
 - **React Hook Form**
 - **Zod**
+- **React Query**
+- **axios**
 
 ## 📌 Funcionalidades
 
