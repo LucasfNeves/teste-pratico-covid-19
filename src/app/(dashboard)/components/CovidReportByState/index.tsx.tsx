@@ -2,7 +2,6 @@ import { useCovidStateReportController } from './useCovidStateReportController'
 import { CovidStateReportCard } from './CovidSReportsCard '
 import Searching from '@/assets/searching.svg'
 import Image from 'next/image'
-import { RegisterCovidStatesModal } from '../RegisterCovidStateModal'
 import { CovidReportsHeader } from './CovidReportsHeader'
 
 /**
@@ -50,8 +49,6 @@ export function CovidReportByStateSelector() {
           />
         </div>
       </section>
-
-      <RegisterCovidStatesModal />
     </div>
   )
 }

@@ -1,31 +1,22 @@
+'use client'
+
 import { Button } from '@/components/Button'
 import { Input } from '@/components/Input'
-import { Modal } from '@/components/Modal'
 import { Controller } from 'react-hook-form'
-import { useRegisterCovidStateModalController } from './useRegisterCovidStateModalController'
 import { SelectInput } from '@/components/SelectInput'
 import { stateUfs } from '@/config/constants'
 import { DatePickerInput } from '@/components/DatePickerInput'
+import { useRegisterCovidStateModalController } from '../(dashboard)/components/RegisterCovidStateModal/useRegisterCovidStateModalController'
 
-export function RegisterCovidStatesModal() {
-  const {
-    control,
-    errors,
-    handleFormSubmit,
-    handleModalClose,
-    handleSubmit,
-    modalOpen,
-  } = useRegisterCovidStateModalController()
+export default function RegisterCovidStatesModal() {
+  const { control, errors, handleFormSubmit, handleSubmit } =
+    useRegisterCovidStateModalController()
 
   return (
-    <Modal
-      open={modalOpen}
-      onClose={handleModalClose}
-      title="Registrar caso de COVD-19"
-    >
+    <div className="flex flex-col items-center justify-center w-[60rem] h-[40rem] bg-darkBlue-800 rounded-md p-8 space-y-4 mx-auto">
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="flex space-y-2 flex-col items-center justify-center ovarflow-y-auto"
+        className="flex space-y-2 flex-col items-center justify-center ovarflow-y-auto w-full"
       >
         <Controller
           control={control}
@@ -112,6 +103,6 @@ export function RegisterCovidStatesModal() {
 
         <Button type="submit">Registrar</Button>
       </form>
-    </Modal>
+    </div>
   )
 }
