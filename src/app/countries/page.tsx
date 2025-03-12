@@ -10,7 +10,7 @@ export default function Countries() {
     useGetCovidReportsByCountry()
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center flex-col justify-center">
       <h1 className="text-lg lg:text-2xl font-semibold text-zinc-200 mb-4">
         Casos de COVID-19 por País
       </h1>

@@ -5,7 +5,6 @@ import { SelectInput } from '@/components/SelectInput'
 import { useDashboardContext } from '@/hooks/useDashboardContext'
 import { PlusIcon } from 'lucide-react'
 import { stateUfs } from '@/config/constants'
-import { useIsMobile } from '@/hooks/useIsMobile'
 import Link from 'next/link'
 
 interface CovidReportsHeaderProps {
@@ -30,19 +29,16 @@ export function CovidReportsHeader({
 }: CovidReportsHeaderProps) {
   const { handleModalOpen } = useDashboardContext()
 
-  const isMobile = useIsMobile()
-
   return (
     <header className="flex lg:justify-between gap-4 lg:flex-row flex-col w-full">
       {/* Exibe o botão de cadastro apenas em dispositivos móveis */}
-      {isMobile && (
-        <Link href="/register-new-case">
-          <Button className="w-full lg:w-52">
-            <PlusIcon className="h-4 w-4" />
-            Cadastrar
-          </Button>
-        </Link>
-      )}
+
+      <Link href="/register-new-case" className="lg:hidden">
+        <Button className="w-full lg:w-52">
+          <PlusIcon className="h-4 w-4" />
+          Cadastrar
+        </Button>
+      </Link>
 
       <div className="flex flex-col gap-4">
         <h1 className="text-lg lg:text-2xl font-semibold text-zinc-200 mb-4">
@@ -63,14 +59,13 @@ export function CovidReportsHeader({
       </div>
 
       {/* Exibe o botão de cadastro apenas em dispositivos não móveis */}
-      {!isMobile && (
-        <Link href="/register-new-case">
-          <Button onClick={handleModalOpen} className="w-full lg:w-52">
-            <PlusIcon className="h-4 w-4" />
-            Cadastrar
-          </Button>
-        </Link>
-      )}
+
+      <Link href="/register-new-case" className="hidden lg:flex">
+        <Button onClick={handleModalOpen} className="w-full lg:w-52">
+          <PlusIcon className="h-4 w-4" />
+          Cadastrar
+        </Button>
+      </Link>
     </header>
   )
 }

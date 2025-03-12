@@ -1,6 +1,5 @@
 'use client'
 
-import { useIsMobile } from '@/hooks/useIsMobile'
 import { ToggleMenu } from './ToggleMenu'
 import { Sidebar } from './Sidebar'
 
@@ -13,9 +12,18 @@ import { Sidebar } from './Sidebar'
  * @returns {JSX.Element} O componente de menu adaptado ao dispositivo.
  */
 export function Menu() {
-  // Determina se o dispositivo é móvel, utilizando o hook `useIsMobile`
-  const isMobile = useIsMobile()
-
   // Retorna o componente apropriado baseado no tipo de dispositivo
-  return isMobile ? <ToggleMenu /> : <Sidebar />
+  return (
+    <div className="bg-red-500">
+      {/* Exibe ToggleMenu em telas menores */}
+      <div className="lg:hidden">
+        <ToggleMenu />
+      </div>
+
+      {/* Exibe Sidebar em telas maiores */}
+      <div className="hidden lg:block">
+        <Sidebar />
+      </div>
+    </div>
+  )
 }

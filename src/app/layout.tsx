@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -35,7 +35,7 @@ export default function RootLayout({
               <Menu />
             </div>
 
-            <div className="flex flex-col w-full items-center justify-center mx-auto max-w-[1280px] bg-darkBlue-900 p-4 lg:p-6">
+            <div className="flex flex-col w-full mx-auto max-w-[1280px] bg-darkBlue-900 p-4 lg:p-6">
               {children}
             </div>
           </div>
