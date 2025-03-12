@@ -73,3 +73,8 @@ fix: corrige bug na página inicial
 ```
 Pronto para começar? Clone o repositório e aproveite! 😎🚀
 
+
+
+ campo de estado, casos, confirmados,
+mortos, recuperados e data, onde todos os campos devem ser de preenchimento obrigatório
+
