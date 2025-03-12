@@ -14,11 +14,16 @@ interface CovidCountriesTableProps {
   covidReportsByCountry: CovidCountryData[]
 }
 
+/**
+ * Componente para exibir a tabela com dados de COVID-19 por país.
+ *
+ * @param {Array<CovidCountryData>} covidReportsByCountry Lista de relatórios de COVID-19 por país.
+ *
+ * @returns {JSX.Element} A tabela contendo os dados de COVID-19 por país.
+ */
 export function CovidCountriesTable({
   covidReportsByCountry,
 }: CovidCountriesTableProps) {
-  // Acessa os dados dos relatórios de COVID do contexto
-
   return (
     <Table>
       <TableCaption className="text-zinc-200">

@@ -6,6 +6,12 @@ import { useCovidStatesFormController } from './useCovidStatesFormController'
 import { FilterDate } from '@/components/FilterDate'
 import { Trash } from 'lucide-react'
 
+/**
+ * Componente de filtro para o estado de COVID.
+ * Permite que o usuário filtre os dados com base em uma data específica.
+ *
+ * @returns {JSX.Element} O formulário para filtragem de dados de COVID por data.
+ */
 export function CovidStatesFilter() {
   const {
     allCaseOfStateFilters,
@@ -18,7 +24,7 @@ export function CovidStatesFilter() {
 
   return (
     <form
-      onSubmit={handleSubmit(handleFormSubmit)} // Envia os dados do formulário
+      onSubmit={handleSubmit(handleFormSubmit)}
       className="mt-10 flex items-start justify-center gap-4 w-full flex-col mb-4"
     >
       <div className="flex items-center gap-4 flex-col lg:flex-row w-full">
@@ -29,16 +35,16 @@ export function CovidStatesFilter() {
           render={({ field }) => <FilterDate field={field} />}
         />
 
-        {/* Botão de filtro para aplicar os filtros selecionados */}
         <button
           className="text-white bg-blue-500 rounded-md px-6 h-10 hover:bg-blue-600 transition-all hover:duration-300 w-full lg:w-auto"
-          type="submit"
+          type="submit" // Botão para filtrar dados
           aria-label="Filtrar dados por data"
         >
           Filtrar
         </button>
       </div>
 
+      {/* Exibe mensagens de erro caso o campo de data seja inválido */}
       {errors.date && (
         <InputMensagerError error={errors.date.message as string} />
       )}
@@ -47,7 +53,7 @@ export function CovidStatesFilter() {
       {Object.keys(allCaseOfStateFilters ?? {}).length > 0 && (
         <button
           className="text-sm text-zinc-400 h-full flex items-end gap-2 hover:text-zinc-200 transition-all hover:duration-300"
-          onClick={clearFilters} // Limpa os filtros aplicados
+          onClick={clearFilters}
           aria-label="Limpar filtros aplicados"
         >
           <Trash className="h-4 w-4" />

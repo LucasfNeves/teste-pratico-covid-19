@@ -10,6 +10,16 @@ interface ButtonProps extends ComponentProps<'button'> {
   isLoading?: boolean
 }
 
+/**
+ * Componente `Button` renderiza um botão estilizado que pode exibir um conteúdo normal ou um ícone de carregamento (`Spinner`) enquanto está em processo de carregamento.
+ *
+ * O botão também suporta estados de desabilitação e personalização de estilos através de classes adicionais.
+ *
+ * @component
+ * @example
+ * <Button isLoading={true} className="my-class">Enviar</Button>
+ * <Button disabled={true}>Enviar</Button>
+ */
 export function Button({
   children,
   className,

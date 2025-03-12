@@ -17,6 +17,14 @@ interface DatePickerInputProps {
   error?: string
 }
 
+/**
+ * Componente `DatePickerInput` renderiza um campo de entrada de data com um calendário em um popover.
+ * Ele permite ao usuário selecionar uma data e exibe a data formatada. Se houver um erro, ele será exibido abaixo do campo.
+ *
+ * @component
+ * @example
+ * <DatePickerInput value={new Date()} onChange={(date) => console.log(date)} />
+ */
 export const DatePickerInput = forwardRef<
   HTMLButtonElement,
   DatePickerInputProps

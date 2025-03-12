@@ -11,6 +11,21 @@ interface NumberInputProps {
   placeholder?: string
 }
 
+/**
+ * Componente `NumberInput` é um campo de input numérico formatado.
+ * Ele utiliza o `react-number-format` para formatar os valores como números,
+ * incluindo separadores de milhar e vírgula como separador decimal.
+ *
+ * @component
+ * @example
+ * <NumberInput
+ *   value={1234}
+ *   onChange={(value) => console.log(value)}
+ *   name="value"
+ *   placeholder="Digite o valor"
+ *   error="Campo obrigatório"
+ * />
+ */
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
   ({ value, name, onChange, error, placeholder, ...props }, ref) => {
     return (

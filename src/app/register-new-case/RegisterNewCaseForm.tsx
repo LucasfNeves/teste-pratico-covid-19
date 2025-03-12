@@ -5,6 +5,11 @@ import { SelectInput } from '@/components/SelectInput'
 import { stateUfs } from '@/config/constants'
 import { DatePickerInput } from '@/components/DatePickerInput'
 
+/**
+ * Interface que define os valores do formulário para registrar casos de COVID.
+ *
+ * @interface FormValues
+ */
 interface FormValues {
   state: string
   date: Date
@@ -20,6 +25,16 @@ interface RegisterNewCaseFormProps {
   errors: FieldErrors<FormValues>
 }
 
+/**
+ * Componente `RegisterNewCaseForm` é um formulário utilizado para registrar novos casos de COVID-19.
+ * Ele inclui campos para selecionar o estado, a data, e inserir números de casos confirmados, óbitos, e recuperados.
+ *
+ * @component
+ * @example
+ * return (
+ *   <RegisterNewCaseForm control={control} handleFormSubmit={handleFormSubmit} errors={errors} />
+ * )
+ */
 export function RegisterNewCaseForm({
   control,
   handleFormSubmit,

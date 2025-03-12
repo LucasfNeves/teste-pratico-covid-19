@@ -14,6 +14,15 @@ interface CovidReportsHeaderProps {
   handleStateChange: (value: string) => void
 }
 
+/**
+ * Componente do cabeçalho para exibir o filtro e opções de cadastro de relatórios de COVID.
+ *
+ * @param {string} selectedState O estado atualmente selecionado.
+ * @param {boolean} isCovidStateReportLoading Indica se os dados do relatório de COVID estão carregando.
+ * @param {function} handleStateChange Função para manipular a mudança de estado no filtro.
+ *
+ * @returns {JSX.Element} O cabeçalho contendo o filtro por estado e opções de cadastro.
+ */
 export function CovidReportsHeader({
   selectedState,
   isCovidStateReportLoading,
@@ -25,6 +34,7 @@ export function CovidReportsHeader({
 
   return (
     <header className="flex lg:justify-between gap-4 lg:flex-row flex-col w-full">
+      {/* Exibe o botão de cadastro apenas em dispositivos móveis */}
       {isMobile && (
         <Link href="/register-new-case">
           <Button className="w-full lg:w-52">
@@ -40,6 +50,7 @@ export function CovidReportsHeader({
         </h1>
 
         <div className="flex items-center justify-start gap-4 mt-auto w-full">
+          {/* Componente de seleção para escolher o estado */}
           <SelectInput
             value={selectedState}
             onChange={handleStateChange}
@@ -51,6 +62,7 @@ export function CovidReportsHeader({
         </div>
       </div>
 
+      {/* Exibe o botão de cadastro apenas em dispositivos não móveis */}
       {!isMobile && (
         <Link href="/register-new-case">
           <Button onClick={handleModalOpen} className="w-full lg:w-52">

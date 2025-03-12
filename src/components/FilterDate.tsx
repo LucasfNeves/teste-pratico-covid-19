@@ -10,6 +10,16 @@ interface InputDateProps {
   field: ControllerRenderProps<{ date: Date }, 'date'>
 }
 
+/**
+ * Componente `FilterDate` é um seletor de data que utiliza um `Popover` e um `Calendar` para selecionar uma data.
+ *
+ * Exibe um botão com a data formatada ou um texto padrão ("Filtre por data") se nenhuma data for selecionada.
+ * Ao clicar no botão, um calendário é exibido no `Popover` para o usuário escolher uma data.
+ *
+ * @component
+ * @example
+ * <FilterDate field={field} />
+ */
 export function FilterDate({ field }: InputDateProps) {
   return (
     <Popover>
