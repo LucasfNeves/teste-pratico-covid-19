@@ -27,7 +27,7 @@ export const Input = forwardRef<HTMLInputElement, InputCurrencyProps>(
           getInputRef={ref}
           thousandSeparator="."
           decimalSeparator=","
-          className="h-[3.25rem] w-full rounded-lg px-2 py-2 text-zinc-200 bg-darkBlue-600 border border-zinc-200 outline-none placeholder:text-zinc-200"
+          className="h-[3.25rem] w-full rounded-lg px-2 py-2 text-zinc-200 bg-darkBlue-700 border border-zinc-200 outline-none placeholder:text-zinc-200"
           {...props}
         />
         {error && (
