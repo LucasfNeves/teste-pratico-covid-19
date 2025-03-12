@@ -1,80 +1,68 @@
-# 🚀 Boilerplate Next.js + React
+# COVIDREPORTS
 
-Um boilerplate eficiente utilizando **Next.js App Router**, **React**, **TailwindCSS**, **Jest**, **React Testing Library**, **Husky**, **Commitlint**, **Prettier** e **ESLint** para iniciar projetos com uma base sólida e organizada.
+COVIDREPORTS é um painel interativo que permite visualizar e filtrar dados sobre a COVID-19 no Brasil e no mundo. O projeto consome a API pública [COVID-19 Brazil API](https://covid19-brazil-api-docs.vercel.app/) e oferece funcionalidades como filtragem de casos por estado, visualização de dados por país e cadastro de novos casos.
 
----
+## 🚀 Tecnologias Utilizadas
 
-## 🛠 Tecnologias Utilizadas
+- **React**
+- **Next.js**
+- **Tailwind CSS**
+- **React Hook Form**
+- **Zod**
 
-- **[Next.js](https://nextjs.org/)** — Estrutura React para produção com suporte ao App Router.  
-- **[React](https://react.dev/)** — Biblioteca para construção de interfaces de usuário.  
-- **[TailwindCSS](https://tailwindcss.com/)** — Framework utilitário para estilização rápida e responsiva.  
-- **[Jest](https://jestjs.io/)** — Testes unitários eficientes e configuráveis.  
-- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** — Testes focados no comportamento do usuário.  
-- **[Husky](https://typicode.github.io/husky/)** — Gatilhos para automatizar tarefas em commits.  
-- **[Commitlint](https://commitlint.js.org/)** — Padronização de mensagens de commit.  
-- **[Prettier](https://prettier.io/)** — Formatação automática de código.  
-- **[ESLint](https://eslint.org/)** — Análise de código para garantir boas práticas.
-- **CI/CD** — Integração e entrega contínua com execução de linters e testes automatizados.
+## 📌 Funcionalidades
 
----
+- 📍 **Filtrar casos por estado** no Brasil.
+- 📊 **Visualizar todos os casos** de COVID-19 no país.
+- 📅 **Filtrar casos por data**.
+- 🌎 **Consultar dados de COVID-19 em outros países**.
+- 📝 **Cadastrar novos casos por estado** (atualmente, apenas exibe um JSON no console).
 
-## 📦 Instalação
+## 🔗 Acesse o Projeto
 
-```bash
-git clone https://github.com/LucasfNeves/boilerplate-apps-router.git
-cd boilerplate-apps-router
-npm install
+O projeto está disponível online no seguinte link:
+
+➡️ **[COVIDREPORTS - Deploy](https://teste-pratico-covid-19.vercel.app/)**
+
+## 📦 Como Executar o Projeto
+
+1. **Clone o repositório**:
+
+   ```sh
+   git clone https://github.com/seu-usuario/covidreports.git
+   cd covidreports
+   ```
+
+2. **Instale as dependências:**:
+
+   ```sh
+     npm install
+   ```
+
+3. **Inicie o ambiente de desenvolvimento:**:
+
+   ```sh
+     npm run dev
+   ```
+
+4. **Acesse no navegador:**:
+   ```sh
+     http://localhost:3000
+   ```
+
+## 📥 Exemplo de Cadastro de Caso
+
+Atualmente, a funcionalidade de cadastro não está conectada à API, apenas exibe um JSON no console:
+
+```json
+{
+  "date": "2025-03-03T03:00:00.000Z",
+  "state": "ap",
+  "cases": 1,
+  "confirmed": 1,
+  "deaths": 1,
+  "recovered": 1
+}
 ```
 
-## ▶️ Executando o Projeto
-
-### Desenvolvimento
-```bash
-npm run dev
-```
-
-### Build para Produção
-```bash
-npm run build
-```
-
-### Servidor de Produção
-```bash
-npm start
-```
-
-## 🧪 Testes
-
-### Executar testes
-```bash
-npm run test
-```
-
-### Executar testes assistidos
-```bash
-npm run test:watch
-```
-
-### Verificar cobertura de testes
-```bash
-npm run test:coverage
-```
-
-## 🚀 Estrutura de CI/CD
-O projeto utiliza GitHub Actions para CI/CD, garantindo que os linters e testes sejam executados automaticamente em cada push e pull request.
-
-## 📄 Convenção de Commits
-Este projeto utiliza Husky e Commitlint para garantir padrões de commit.
-Exemplo de mensagem de commit:
-```bash
-feat: adiciona nova funcionalidade de login
-fix: corrige bug na página inicial
-```
-Pronto para começar? Clone o repositório e aproveite! 😎🚀
-
-
-
- campo de estado, casos, confirmados,
-mortos, recuperados e data, onde todos os campos devem ser de preenchimento obrigatório
-
+Desenvolvido por Lucas Farias 🚀

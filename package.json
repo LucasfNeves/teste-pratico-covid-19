@@ -10,8 +10,7 @@
     "prepare": "husky install",
     "test": "jest --passWithNoTests --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
-    "test:ci": "jest --runInBand",
-    "generate": "npx plop --plopfile generators/plopfile.js"
+    "test:ci": "jest --runInBand"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
