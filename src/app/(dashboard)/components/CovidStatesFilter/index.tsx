@@ -56,8 +56,10 @@ export function CovidStatesFilter() {
           onClick={clearFilters}
           aria-label="Limpar filtros aplicados"
         >
-          <Trash className="h-4 w-4" />
-          Limpar Filtros
+          <span className="flex items-center gap-2">
+            <Trash className="h-4 w-4" />
+            Limpar Filtros
+          </span>
         </button>
       )}
     </form>
