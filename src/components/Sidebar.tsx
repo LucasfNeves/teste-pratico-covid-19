@@ -2,6 +2,7 @@ import Logo from '@/assets/logo.svg'
 import { LayoutDashboard, Table } from 'lucide-react'
 import Image from 'next/image'
 import { ButtonNavigate } from './ButtonNavigate'
+import Link from 'next/link'
 
 /**
  * Componente Sidebar que renderiza uma barra lateral de navegação.
@@ -14,7 +15,9 @@ import { ButtonNavigate } from './ButtonNavigate'
 export function Sidebar() {
   return (
     <aside className="fixed left-0 top-0 flex h-full w-[13rem] flex-col items-center justify-start bg-darkBlue-700 p-6">
-      <Image src={Logo} alt="Logo" height={40} />
+      <Link href="/">
+        <Image src={Logo} alt="Logo" height={40} />
+      </Link>
 
       <div className="flex h-full flex-col justify-between w-full">
         <div className="mt-8 flex w-full flex-col gap-4">

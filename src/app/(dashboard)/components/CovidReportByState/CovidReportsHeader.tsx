@@ -6,6 +6,7 @@ import { useDashboardContext } from '@/hooks/useDashboardContext'
 import { PlusIcon } from 'lucide-react'
 import { stateUfs } from '@/config/constants'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import Link from 'next/link'
 
 interface CovidReportsHeaderProps {
   selectedState: string
@@ -25,10 +26,12 @@ export function CovidReportsHeader({
   return (
     <header className="flex lg:justify-between gap-4 lg:flex-row flex-col w-full">
       {isMobile && (
-        <Button onClick={handleModalOpen} className="w-full lg:w-52">
-          <PlusIcon className="h-4 w-4" />
-          Cadastrar
-        </Button>
+        <Link href="/register-new-case">
+          <Button className="w-full lg:w-52">
+            <PlusIcon className="h-4 w-4" />
+            Cadastrar
+          </Button>
+        </Link>
       )}
 
       <div className="flex flex-col gap-4">
@@ -49,10 +52,12 @@ export function CovidReportsHeader({
       </div>
 
       {!isMobile && (
-        <Button onClick={handleModalOpen} className="w-full lg:w-52">
-          <PlusIcon className="h-4 w-4" />
-          Cadastrar
-        </Button>
+        <Link href="/register-new-case">
+          <Button onClick={handleModalOpen} className="w-full lg:w-52">
+            <PlusIcon className="h-4 w-4" />
+            Cadastrar
+          </Button>
+        </Link>
       )}
     </header>
   )

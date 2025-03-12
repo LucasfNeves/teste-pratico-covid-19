@@ -2,16 +2,16 @@ import { NumericFormat } from 'react-number-format'
 import React, { forwardRef } from 'react'
 import { InputMensagerError } from './inputMensagerError'
 
-interface InputCurrencyProps {
+interface NumberInputProps {
   value: number | undefined
-  onChange: (value: number) => void
+  onChange: (value: number | undefined) => void
   onBlur?: () => void
   name: string
   error?: string
   placeholder?: string
 }
 
-export const Input = forwardRef<HTMLInputElement, InputCurrencyProps>(
+export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
   ({ value, name, onChange, error, placeholder, ...props }, ref) => {
     return (
       <label htmlFor={name} className="flex flex-col w-full">
@@ -20,9 +20,9 @@ export const Input = forwardRef<HTMLInputElement, InputCurrencyProps>(
         )}
         <NumericFormat
           maxLength={16}
-          value={value}
+          value={value ?? ''}
           placeholder="00"
-          onValueChange={({ floatValue }) => onChange(floatValue ?? 0)}
+          onValueChange={({ floatValue }) => onChange(floatValue ?? undefined)}
           name={name}
           getInputRef={ref}
           thousandSeparator="."
@@ -40,4 +40,4 @@ export const Input = forwardRef<HTMLInputElement, InputCurrencyProps>(
   },
 )
 
-Input.displayName = 'Input'
+NumberInput.displayName = 'NumberInput'

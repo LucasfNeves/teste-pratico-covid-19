@@ -1,14 +1,11 @@
 'use client'
 
-import { useDashboardContext } from '@/hooks/useDashboardContext'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { z } from 'zod'
 
 export function useRegisterCovidStateModalController() {
-  const { modalOpen, modalClose } = useDashboardContext()
-
   const FormSchema = z.object({
     date: z.date({
       required_error: 'A data é obrigatória.',
@@ -41,12 +38,7 @@ export function useRegisterCovidStateModalController() {
     resolver: zodResolver(FormSchema),
   })
 
-  const handleModalClose = () => {
-    reset()
-    modalClose()
-  }
-
-  const handleFormSubmit = (data: FormData) => {
+  const handleFormSubmit = handleSubmit((data: FormData) => {
     toast.success('Registro criado com sucesso')
 
     const formateDate = data.date.toISOString()
@@ -56,17 +48,14 @@ export function useRegisterCovidStateModalController() {
       date: formateDate,
     }
 
+    reset()
     console.log(JSON.stringify(newData, null, 2))
-
-    handleModalClose()
-  }
+  })
 
   return {
     control,
     handleSubmit,
     errors,
-    handleModalClose,
     handleFormSubmit,
-    modalOpen,
   }
 }
